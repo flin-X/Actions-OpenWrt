@@ -15,7 +15,7 @@ on:
     branches: 
       - master
     paths:
-      - '.config'
+      - 'my.config'
 #  schedule:
 #    - cron: 0 8 * * 5
 #  watch:
@@ -60,7 +60,7 @@ jobs:
 
     - name: Load custom configuration
       env:
-        CONFIG_FILE: 'my.config'
+        CONFIG_FILE: '.config'
         DIY_SH: 'diy.sh'
       run: |
         [ -e files ] && mv files openwrt/files
