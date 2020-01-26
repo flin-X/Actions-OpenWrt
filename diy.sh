@@ -17,7 +17,7 @@ echo "Modify default wifi encryption"
 sed -i 's/none/psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #Modify default wifi password
 echo "Modify default wifi password"
-sed 's/psk2/set wireless.default_radio${devidx}.key=asdfghjkl/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed 's/psk2/a\set wireless.default_radio${devidx}.key=asdfghjkl\n/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #Modify default theme
 echo "Modify default theme"
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
