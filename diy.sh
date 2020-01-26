@@ -15,6 +15,7 @@ sed -i 's/OpenWrt/BOOT/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #Modify default theme
 echo "Modify default theme"
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/bootstrap/argon/g' feeds/luci/modules/luci-base/root/etc/config/luci
 #Update luci-theme-argon
 echo "Update luci-theme-argon"
 rm -rf package/lean/luci-theme-argon
