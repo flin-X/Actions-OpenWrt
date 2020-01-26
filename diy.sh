@@ -15,9 +15,9 @@ sed -i 's/OpenWrt/BOOT/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #Modify default wifi encryption
 echo "Modify default wifi encryption"
 sed -i 's/none/psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-#Modify default wifi password
-echo "Modify default wifi password"
-sed 's/psk2/a\set wireless.default_radio${devidx}.key=asdfghjkl\n/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#Add default wifi password
+echo "Add default wifi password"
+sed -i '/psk2/a\ \t\t\tset wireless.default_radio${devidx}.key=asdfghjkl' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #Modify default theme
 echo "Modify default theme"
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
