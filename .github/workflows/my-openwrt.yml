@@ -103,6 +103,8 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
+        #copy .config
+        cp -p ../../../../.config .
         echo "::set-env name=FIRMWARE::$(pwd)"
 
     - name: Upload firmware
