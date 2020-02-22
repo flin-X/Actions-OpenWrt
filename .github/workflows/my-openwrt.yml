@@ -111,3 +111,10 @@ jobs:
       with:
         name: OpenWrt_firmware
         path: ${{ env.FIRMWARE }}
+    
+    - name: Upload config
+      uses: actions/upload-artifact@master
+      if: always()
+      with:
+        name: OpenWrt_config
+        path: openwrt/.config
