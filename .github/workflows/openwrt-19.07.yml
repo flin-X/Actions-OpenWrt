@@ -60,7 +60,7 @@ jobs:
 
     - name: Load custom configuration
       env:
-        CONFIG_FILE: 'my.config'
+        CONFIG_FILE: '19.07.config'
         DIY_SH: 'diy.sh'
       run: |
         [ -e files ] && mv files openwrt/files
