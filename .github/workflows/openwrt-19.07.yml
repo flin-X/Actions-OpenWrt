@@ -26,7 +26,7 @@ env:
   REPO_BRANCH: openwrt-19.07
   CONFIG_FILE: 19.07.config
   DIY_SH: diy.sh
-  FREE_UP_DISK: false
+  FREE_UP_DISK: true
   SSH_ACTIONS: true
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
@@ -60,7 +60,7 @@ jobs:
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
     - name: Clone source code
-      run: git clone --depth 1 $REPO_URL -b openwrt-19.07 openwrt
+      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
