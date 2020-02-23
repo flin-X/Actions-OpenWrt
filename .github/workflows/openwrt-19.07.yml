@@ -60,7 +60,7 @@ jobs:
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
     - name: Clone source code
-      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+      run: git clone --depth 1 $REPO_URL -b openwrt-19.07 openwrt
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
