@@ -16,8 +16,8 @@ on:
       - master
     paths:
       - 'my.config'
-#  schedule:
-#    - cron: 0 8 * * 5
+  schedule:
+    - cron: 0 21 1,16 * ?
 #  watch:
 #    types: [started]
 
@@ -112,6 +112,8 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
+        # copy .config
+        cp -p ../../../../.config .
         echo "::set-env name=FIRMWARE::$(pwd)"
         echo "::set-output name=status::success"
 
