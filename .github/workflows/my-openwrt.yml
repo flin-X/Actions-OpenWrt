@@ -10,7 +10,7 @@ name: Build My OpenWrt
 
 on:
   release:
-    types: [published]
+    types: published
   push:
     branches:
       - master
@@ -19,7 +19,7 @@ on:
   schedule:
     - cron: 0 21 1,16 * ?
 #  watch:
-#    types: [started]
+#    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -114,7 +114,7 @@ jobs:
         rm -rf packages
         # copy .config
         cp -p ../../../../.config .
-        echo "::set-env name=FIRMWARE::$(pwd)"
+        echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
 
     - name: Upload firmware directory
