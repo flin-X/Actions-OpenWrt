@@ -18,6 +18,8 @@ sed -i 's/none/psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #Add default wifi password
 echo "Add default wifi password"
 sed -i '/psk2/a\ \t\t\tset wireless.default_radio${devidx}.key=asdfghjkl' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#Cancel ariang
+sed -i 's/+ariang/ /g' package/feeds/luci/luci-app-aria2/Makefile
 #Modify default theme
 echo "Modify default theme"
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
