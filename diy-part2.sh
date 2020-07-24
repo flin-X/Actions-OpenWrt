@@ -28,4 +28,5 @@ sed -i 's/bootstrap/argon/g' feeds/luci/modules/luci-base/root/etc/config/luci
 #Update luci-theme-argon
 echo "Update luci-theme-argon"
 rm -rf package/lean/luci-theme-argon
-git clone https://github.com/flin-X/luci-theme-argon.git package/lean/luci-theme-argon
+#git clone https://github.com/flin-X/luci-theme-argon.git package/lean/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
