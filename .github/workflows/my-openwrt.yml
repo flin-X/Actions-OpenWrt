@@ -80,7 +80,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j4
+        make -j$(nproc)
         echo "::set-output name=status::success"
 
     - name: Upload bin directory
