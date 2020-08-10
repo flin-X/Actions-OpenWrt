@@ -77,7 +77,7 @@ jobs:
       id: compile
       run: |
         cd openwrt
-        echo -e "$(nproc) thread compile"
+        #echo -e "$(nproc) thread compile"
         make -j1 V=s
         echo "::set-output name=status::success"
 
